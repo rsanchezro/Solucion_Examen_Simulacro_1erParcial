@@ -22,11 +22,8 @@ class Cita(
         personas.add(persona)
     }
 
-    override fun mostrarDetalles() {
-        super.mostrarDetalles()
-        println("Fecha y Hora: $fechaHora")
-        println("Lugar: $lugar")
-        println("Personas invitadas: ${personas.joinToString { it.nombre }}")
+    override fun toString():String {
+        return super.toString() + "Fecha y Hora: $fechaHora Lugar: $lugar  Personas invitadas: ${personas.joinToString { it.nombre }}"
     }
 }
-data class Persona(val nombre: String, val telefono: String)
+public data class Persona(val nombre: String, val telefono: String)
