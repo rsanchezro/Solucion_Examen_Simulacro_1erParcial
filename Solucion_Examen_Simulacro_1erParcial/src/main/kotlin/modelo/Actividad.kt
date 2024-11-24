@@ -9,21 +9,8 @@ abstract class Actividad(
             println("Actividad '$nombre' completada.")
         }
 
-        open fun mostrarDetalles() {
-            println("Nombre: $nombre")
-            println("Estado: ${if (completada) "Completada" else "Pendiente"}")
+        override fun toString():String {
+           return( "Nombre: $nombre Estado: ${if (completada) "Completada" else "Pendiente"}")
         }
     }
-fun ArrayList<Actividad>.filtrar(condicion:(Actividad)->Boolean):ArrayList<Actividad>
- {
-     var milistafiltrada=ArrayList<Actividad>()
-     this.forEach{
-         if(condicion(it))
-         {
-             milistafiltrada.add(it)
-         }
-     }
-     return milistafiltrada
-
-}
 
